@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="DemoAppTest" type="JUnit" factoryName="JUnit">
+    <module name="polyglot-bug-report" />
+    <option name="PACKAGE_NAME" value="com.example" />
+    <option name="MAIN_CLASS_NAME" value="com.example.DemoAppTest" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="class" />
+    <option name="VM_PARAMETERS" value="-ea -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI --upgrade-module-path=$PROJECT_DIR$/target/graalvm" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
