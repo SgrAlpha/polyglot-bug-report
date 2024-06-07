@@ -16,6 +16,8 @@
         <dep.guava.version>33.1.0-jre</dep.guava.version>
         <dep.slf4j.version>1.7.30</dep.slf4j.version>
         <dep.junit.version>5.8.1</dep.junit.version>
+
+        <surefireArgLine>-Xmx512m</surefireArgLine>
     </properties>
 
     <dependencies>
@@ -67,7 +69,7 @@
                 <executions>
                     <execution>
                         <id>copy</id>
-                        <phase>prepare-package</phase>
+                        <phase>test-compile</phase>
                         <goals>
                             <goal>copy</goal>
                         </goals>
@@ -102,6 +104,14 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <argLine>-XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI --upgrade-module-path=${project.build.directory}/graalvm ${surefireArgLine}</argLine>
+                </configuration>
             </plugin>
         </plugins>
     </build>
